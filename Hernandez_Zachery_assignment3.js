@@ -28,25 +28,27 @@ var icons = deviceSpecs(6);
 console.log("The " + bold.name() +  " has a resolution of " + resolution.name() + ". This device has total of " + icons.name() + " icons on the home screen.");
 
 // Custom Home Screen //
-var customScreen = function(custom) {
+var customScreen = function(action, detail, limit) {
 	// Private Data //
 	var action = "sliding icon dock",
-		iconDetail = "mini icons",
-		icons = 10;
-	var action = function() { return action };
-	var iconDetail = function() { return iconDetail };
-	var icons = function() { return icons };
+		detail = "mini icons",
+		limit = 10;
+	var getAction = function() { return action };
+	var iconDetail = function() { return detail };
+	var icons = function() { return limit };
 	return {
 		// Public Data //
-		"action": action,
-		"iconDetail": iconDetail,
-		"icons": icons,
+		"action": getAction,
+		"detail": iconDetail,
+		"limit": icons,
 	};
 };
 var action = customScreen("sliding icon dock");
-var iconDetail = customScreen("mini icons");
-var icons = customScreen(10);
-console.log("For this custom home screen, you will input a " + action.custom() + " with " + iconDetail.custom + " for a new total of " + icons.custom() + " icons.");
+var detail = customScreen("mini icons");
+var limit = customScreen(10);
+console.log("For this custom home screen, you will input a " + action.action() + " with " + detail.detail() + " for a new total of " + limit.limit() + " icons.");
+
+alert("Creating a Custom Home Screen!");
 
 
 
