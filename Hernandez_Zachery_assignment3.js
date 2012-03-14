@@ -30,7 +30,7 @@ console.log("The " + bold.name() +  " has a resolution of " + resolution.name() 
 // Custom Home Screen //
 var customScreen = function(action, detail, limit) {
 	// Private Data //
-	var action = "sliding icon dock",
+	var action = "animated hidden dock",
 		detail = "mini icons",
 		limit = 10;
 	var getAction = function() { return action };
@@ -43,10 +43,56 @@ var customScreen = function(action, detail, limit) {
 		"limit": icons,
 	};
 };
-var action = customScreen("sliding icon dock");
+var action = customScreen("animated hidden dock");
 var detail = customScreen("mini icons");
 var limit = customScreen(10);
 console.log("For this custom home screen, you will input a " + action.action() + " with " + detail.detail() + " for a new total of " + limit.limit() + " icons.");
+
+// BlackBerry Composer //
+var blackberryComposer = function(action, insert, resize) {
+	// Private Data //
+	var composer = true,
+		insert = "default icons",
+		fullSize = 80,
+		resize = .5;
+	var composer = function() {
+		if (composer !== false) {
+			console.log("Start a new project for the BlackBerry Bold 9700.");
+		} else {
+			console.log("Open the BlackBerry Composer.");
+		};
+	};
+	var insert = function() { return insert };
+	var resize = function() { return fullSize / resize };
+	return {
+		// Public Data //
+		"action": composer,
+		"insert": insert,
+		"resize": resize,
+	};
+};
+var composer = blackberryComposer(true);
+var insert = blackberryComposer("default icons");
+var resize = blackberryComposer(80 / 2);
+console.log("Import your icons' " + insert.insert() + " into the BlackBerry Composer. Now resize your icons from 80px by 80px to " + resize.resize() + "px by " + resize.resize() + "px.");
+
+// Use of JSON Data //
+var outputData = function(json) {
+	for (var i = 0, j = json.compatibleDevices.length; i < j; i++) {
+		var compatible = json.compatibleDevices[i];
+		console.log("The " + compatible.name + ", OS: " + compatible.os + " is able to utilize this SVG file.");
+	};
+};
+outputData(json);
+
+// Use of Second Set of Info of JSON Data //
+var outputData2 = function(json) {
+	for (var i = 0, k = json.notCompatibleDevices.length; i < k; i++) {
+	var notCompatible = json.notCompatibleDevices[i];
+	console.log("The " + notCompatible.name + ", OS: " + notCompatible.os + " is not able to utilize this SVG file.");
+	};
+};
+outputData2(json);
 
 alert("Creating a Custom Home Screen!");
 

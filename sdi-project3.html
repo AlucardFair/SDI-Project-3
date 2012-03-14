@@ -10,8 +10,9 @@
     		<h2>Project 3</h2>
 		</header>
 			<article>
-				<p>Adding in a custom home screen using XML, also known as SVG. For this, you will be utilizing the BlackBerry Composer. This is a quick and effective way to get your XML coded, but, you will still need to know some XML as you will have to hand code in the specifics. This custom home screen will feature a sliding dock of ten mini icons, opposed to the traditional six static icons. Once composer is open, start placing in default icons (this will allow the device to use device ordered icons). You all of those are in place, you will need to replace all the images from full size "80 x 80" icons with half sized icons; "40 x 40" (keep the default icon image), this includes the icon focus image. Now, with all of the icon images changed, align (and keep them in order 1-10) icon one to the far left bottom corner. Take icon 10 and place it in the far right bottom corner. Highlight all your icons and use the align tool to align them all to the bottom, then space them using the space align tool. That's all you need to do in BlackBerry Composer. Export and save your SVG file so you can access it easily.</p>
-				<p>Now, locate the SVG file you saved and open it up in a text editor of your choice. You will need to input some code. Luckily, you can do this at the very bottom of the XML (SVG) file. Scroll all the way down and make some space right before your closing tag. You will need to add in this exact code to perform the sliding dock interaction:</p>
+				<p>Adding in a custom home screen using XML, also known as working with a SVG file. For this, you will be utilizing the BlackBerry Composer. This is a quick and effective way to get your XML coded, but, you will still need to know some XML as you will have to hand code in the specifics. This custom home screen will be made for the BlackBerry Bold 9700 and will feature an animated hidden dock of ten mini icons, opposed to the traditional six static icons.</p>
+				<p>Once composer is open, start placing in default icons (this will allow the device to use device ordered icons). You all of those are in place, you will need to replace all the images from full size "80 x 80" icons with half sized icons; "40 x 40" (keep the default icon image), this includes the icon focus image. Now, with all of the icon images changed, align (and keep them in order 1-10) icon one to the far left bottom corner. Take icon 10 and place it in the far right bottom corner. Highlight all your icons and use the align tool to align them all to the bottom, then space them using the space align tool. That's all you need to do in BlackBerry Composer. Export and save your SVG file so you can access it easily.</p>
+				<p>Now, locate the SVG file you saved and open it up in a text editor of your choice. You will need to input some code. Luckily, you can do this at the very bottom of the XML (SVG) file. Scroll all the way down and make some space right before your closing tag. You will need to add in this exact code to perform the animated hidden dock interaction:</p>
 					<blockquote>&ltanimateTransform xlink:href="#Layer_1" id="_anim_l1" attributeName="transform" type="translate"</blockquote>
 					<blockquote>to="0,0" dur="0.5s"</blockquote>
 					<blockquote>fill="freeze"</blockquote>
@@ -21,12 +22,25 @@
 					<blockquote>to="0,-80" dur="0.5s"</blockquote> 
 					<blockquote>fill="freeze"</blockquote>
 					<blockquote>begin="accessKey(SPACE)"	/></blockquote>
-				<p>Saved? Good. Import this SVG file into the BlackBerry Theme Studio, set the icon navigation to horizontal. Replace wallpapers if desired (home screen can be done on device). Now, export this theme to your device and enjoy!</p>
+				<p>Saved? Good. Import this SVG file into the BlackBerry Theme Studio, set the icon navigation to horizontal. Replace wallpapers if desired (home screen can be done on device). Now, export this theme to your device and enjoy! Can this SVG file be used for other devices? </p>
+					<ul>
+					<li>Compatible Devices</li>
+					<li>BlackBerry Tour 9630</li>
+					<li>BlackBerry Bold 9650</li>
+					<li>BlackBerry Curve 8900</li>
+					</ul>
+					<ul>
+					<li>Not Compatible Devices</li>
+					<li>BlackBerry Curve 8300</li>
+					<li>BlackBerry Curve 9300</li>
+					<li>BlackBerry Storm 9350</li>
+					</ul>
+				<p>An animated hidden dock allows the user to see the icon dock slide down and off the screen before it hides. Hiding the icons means that nothing is selectable while they are hidden. SVG stands for Scalable Vector Graphics. XML stands for Extensible Markup Language.</p>
 			</article>
 		<footer>
     		<p>COMPLETION DATE, Zachery Hernandez</p>
 		</footer>
-		<script type="text/javascript" src="Hernandez_Zachery_assignment3.js"></script>
 		<script type="text/javascript" src="json.js"></script>
+		<script type="text/javascript" src="Hernandez_Zachery_assignment3.js"></script>
 	</body>
 </html>

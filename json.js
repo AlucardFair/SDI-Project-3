@@ -6,18 +6,35 @@ BlackBerry, Themes, SVG
 Public Git Repository at: https://github.com/AlucardFair/SDI-Project-3
 */
 
-var otherDevices = "sameSpecs" [
-	//follow same resolution //
-	{
-		"name": ["Tour 9630", "Bold 9650", "Curve 8900"],
-		"os": ["5.0", "5.0", "5.0"]
-	};
-	var differentDevices = "" [
-	//do not follow same resolution //
-	{
-		"differentName": ["Curve 8300", "Curve 9300", "Storm 2 9550"],
-		"differentOs": ["4.5", "6.0", "4.7.1"]
-	};
-	
-	];
-];
+//follow same resolution and OS compatibility//
+var json = {
+	"compatibleDevices": [ 
+		{
+			"name": "BlackBerry Tour 9630",
+			"os": "5.0"
+		},
+		{
+			"name": "BlackBerry Bold 9650",
+			"os": "5.0",
+		},
+		{
+			"name": "BlackBerry Curve 8900",
+			"os": "5.0"
+		}
+		],
+	//do not follow same resolution or OS compatibility//
+	"notCompatibleDevices": [ 
+		{
+			"name": "BlackBerry Curve 8300",
+			"os": "4.5"
+		},
+		{
+			"name": "BlackBerry Curve 9300",
+			"os": "6.0"
+		},
+		{
+			"name": "BlackBerry Storm 9530",
+			"os": "4.7.1"
+		}
+	]
+};
