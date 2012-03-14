@@ -49,32 +49,35 @@ var limit = customScreen(10);
 console.log("For this custom home screen, you will input a " + action.action() + " with " + detail.detail() + " for a new total of " + limit.limit() + " icons.");
 
 // BlackBerry Composer //
-var blackberryComposer = function(action, insert, resize) {
+var composer = function(action, insert, fullSize, resize) {
 	// Private Data //
-	var composer = true,
+	var getAction = true,
 		insert = "default icons",
 		fullSize = 80,
-		resize = .5;
+		resize = 2;
 	var composer = function() {
 		if (composer !== false) {
 			console.log("Start a new project for the BlackBerry Bold 9700.");
 		} else {
-			console.log("Open the BlackBerry Composer.");
+			console.log("Download and install the latest version of BlackBerry Composer.");
 		};
 	};
 	var insert = function() { return insert };
-	var resize = function() { return fullSize / resize };
+	var resize = function() { return (fullSize / resize) };
+	var fullSize = function() { return fullSize };
 	return {
 		// Public Data //
-		"action": composer,
+		"action": getAction,
 		"insert": insert,
 		"resize": resize,
+		"fullSize": fullSize,
 	};
 };
-var composer = blackberryComposer(true);
-var insert = blackberryComposer("default icons");
-var resize = blackberryComposer(80 / 2);
-console.log("Import your icons' " + insert.insert() + " into the BlackBerry Composer. Now resize your icons from 80px by 80px to " + resize.resize() + "px by " + resize.resize() + "px.");
+var action = composer(true);
+var insert = composer("default icons");
+var fullSize = composer(80);
+var resize = composer(2);
+console.log("Import your " + insert.insert() + " into the BlackBerry Composer. Now resize your icons from " + fullSize.fullSize() + "px by " + fullSize.fullSize() + " px to " + resize.resize() + "px by " + resize.resize() + "px.");
 
 // Use of JSON Data //
 var outputData = function(json) {
