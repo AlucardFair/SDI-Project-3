@@ -4,19 +4,29 @@
     <title>Zachery Hernandez :: Project 3 :: SDI 12/02</title>
     <link rel="stylesheet" href="sdi.css" type="text/css" />
 </head>
-<body>
-<header>
-    <h1>SDI <em>12/02</em>: Zachery Hernandez</h1>
-    <h2>Project 3</h2>
-</header>
-<article>
-<p>In this space you should provide a short (one paragraph) explanation of your theme and why you chose it.</p>
-<p>You may also use this space to explain any elements of your code story that may not be entirely clear.  For example, if your theme is thirteenth century Italian poetry, not everyone may be familiar with that.</p>
-<p>Don't forget to replace all of the capitalized elements in this template with your information.  Your term number should be in a <em>yymm</em> format, including the year and the month.</p>
-</article>
-<footer>
-    <p>COMPLETION DATE, Zachery Hernandez</p>
-</footer>
-<script type="text/javascript" src="Hernandez_Zachery_assignment3.js"></script>
-</body>
+	<body>
+		<header>
+    		<h1>SDI <em>12/02</em>: Zachery Hernandez</h1>
+    		<h2>Project 3</h2>
+		</header>
+			<article>
+				<p>Adding in a custom home screen using XML, also known as SVG. For this, you will be utilizing the BlackBerry Composer. This is a quick and effective way to get your XML coded, but, you will still need to know some XML as you will have to hand code in the specifics. This custom home screen will feature a sliding dock of ten mini icons, opposed to the traditional six static icons. Once composer is open, start placing in default icons (this will allow the device to use device ordered icons). You all of those are in place, you will need to replace all the images from full size "80 x 80" icons with half sized icons; "40 x 40" (keep the default icon image), this includes the icon focus image. Now, with all of the icon images changed, align (and keep them in order 1-10) icon one to the far left bottom corner. Take icon 10 and place it in the far right bottom corner. Highlight all your icons and use the align tool to align them all to the bottom, then space them using the space align tool. That's all you need to do in BlackBerry Composer. Export and save your SVG file so you can access it easily.</p>
+				<p>Now, locate the SVG file you saved and open it up in a text editor of your choice. You will need to input some code. Luckily, you can do this at the very bottom of the XML (SVG) file. Scroll all the way down and make some space right before your closing tag. You will need to add in this exact code to perform the sliding dock interaction:</p>
+					<blockquote>&ltanimateTransform xlink:href="#Layer_1" id="_anim_l1" attributeName="transform" type="translate"</blockquote>
+					<blockquote>to="0,0" dur="0.5s"</blockquote>
+					<blockquote>fill="freeze"</blockquote>
+					<blockquote>begin="accessKey(ESCAPE)"	/></blockquote>
+					
+					<blockquote>&ltanimateTransform xlink:href="#Layer_1" id="_anim_l2" attributeName="transform" type="translate"</blockquote>
+					<blockquote>to="0,-80" dur="0.5s"</blockquote> 
+					<blockquote>fill="freeze"</blockquote>
+					<blockquote>begin="accessKey(SPACE)"	/></blockquote>
+				<p>Saved? Good. Import this SVG file into the BlackBerry Theme Studio, set the icon navigation to horizontal. Replace wallpapers if desired (home screen can be done on device). Now, export this theme to your device and enjoy!</p>
+			</article>
+		<footer>
+    		<p>COMPLETION DATE, Zachery Hernandez</p>
+		</footer>
+		<script type="text/javascript" src="Hernandez_Zachery_assignment3.js"></script>
+		<script type="text/javascript" src="json.js"></script>
+	</body>
 </html>
