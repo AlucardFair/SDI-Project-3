@@ -51,19 +51,18 @@ console.log("For this custom home screen, you will input an " + action.action() 
 // BlackBerry Composer //
 var composer = function(insert, limit, normal, resize, math, align, save) {
 	// Provate Data //
-	var insert= "insert icons",
+	var haveInstalled = true,
+		insert= "insert icons",
 		limit = 10,
 		normal = 80,
 		resize = 2,
 		math = (normal / resize),
 		align = "align the new icons at the bottom",
 		save = "Save and export";
-	var haveInstalled = function(installed) {
-	if (installed !== false) {
+	if (haveInstalled !== false) {
 		console.log("Start a new project in the BlackBerry Composer.");
 	} else {
 		console.log("Download and install the latest versino of the BlackBerry Composer.");
-	};
 	};
 	var insertIcons = function() { return insert };
 	var iconLimit = function() { return limit };
@@ -93,10 +92,72 @@ var math = composer(normal / resize);
 var align = composer("align the new icons at the bottom");
 var save = composer("save and export");
 console.log("First, " + insert.insert() + ".");
-console.log("All " +  limit.limit() + " icons need to placed in all at once.");
+console.log("All " +  limit.limit() + " icons need to placed in.");
+console.log("All " + limit.limit() + " have been placed in.");
 console.log("Next, change the resolution from " + normal.normal() + "px by " + normal.normal() + "px to " + math.math() + "px by " + math.math() + "px.");
-console.log("Now " + align.align() + " of the preview canvas. Make sure the first icon is at the bottom left and the last icon is at the bottom right before you " + align.align() + ". Now pace them evenly.");
+console.log("Now " + align.align() + " of the preview canvas. Make sure the first icon is at the bottom left and the last icon is at the bottom right before you " + align.align() + ". Now space them evenly.");
 console.log(save.save() + " you SVG file.");
+
+// Hand Code SVG //
+var handCode = function(name) {
+	// Private Data //
+	var fileName = "svg",
+		openFile = true;
+	var fileName = function() { return name };
+	if (openFile === true) {
+		console.log("Now with the SVG file open, scroll to bottom of XML file.");
+	} else {
+		console.log("Open the SVG file in a text editor before you can begin.");
+	};
+	return {
+	// Public Data //
+		"name": fileName,
+	};
+};
+var svg = handCode("svg");
+
+var animation = "animation",
+	hidden = "hidden interaction",
+	scroll = true,
+	done = true;
+if (scroll === true) {
+	console.log("Place in the " + animation + " and the " + hidden + " codes before the closing tag.");
+} else {
+	console.log("You will need to scroll all the way down before you can place in the " + animation + " and the " + hidden + " codes.");
+};
+if (done !== true) {
+	console.log("Place in the " + animation + " and " + hidden + " codes.");
+} else {
+	console.log("Save the file.");
+};
+
+// BlackBerry Theme Developer //
+var themeDeveloper = function(open, place, navigation, save) {
+	// Private Data //
+	var open = "start a new",
+		place = "import the SVG file",
+		navigation = " set the navigation",
+		save = "export";
+	var openNew = function() { return open};
+	var importFile = function() { return place };
+	var setNavigation = function() { return navigation };
+	var exportFile = function() { return save };
+	return {
+		// Public Data //
+		"open": openNew,
+		"place": importFile,
+		"navigation": setNavigation,
+		"save": exportFile,
+};
+};
+var open = themeDeveloper("start a new");
+var place = themeDeveloper("import the SVG file");
+var navigation = themeDeveloper("set the navigation");
+var save = themeDeveloper("export");
+console.log("Open the BlackBerry Theme Studio and " + open.open() + " theme for the BlackBerry 9700.");
+console.log("Now, " + place.place() + " into the BlackBerry Theme Studio.");
+console.log("In the icon section " + navigation.navigation() + " to horizontal.");
+console.log("Finally, " + save.save() + " your theme to your device.");
 
 // Use of JSON Data //
 var outputData = function(json) {
@@ -116,6 +177,7 @@ var outputData2 = function(json) {
 };
 outputData2(json);
 
+console.log("Hooray! Enjoy your new theme!");
 alert("Creating a Custom Home Screen!");
 
 
