@@ -46,38 +46,57 @@ var customScreen = function(action, detail, limit) {
 var action = customScreen("animated hidden dock");
 var detail = customScreen("mini icons");
 var limit = customScreen(10);
-console.log("For this custom home screen, you will input a " + action.action() + " with " + detail.detail() + " for a new total of " + limit.limit() + " icons.");
+console.log("For this custom home screen, you will input an " + action.action() + " with " + detail.detail() + " for a new total of " + limit.limit() + " icons.");
 
 // BlackBerry Composer //
-var composer = function(action, insert, fullSize, resize) {
-	// Private Data //
-	var getAction = true,
-		insert = "default icons",
-		fullSize = 80,
-		resize = 2;
-	var composer = function() {
-		if (composer !== false) {
-			console.log("Start a new project for the BlackBerry Bold 9700.");
-		} else {
-			console.log("Download and install the latest version of BlackBerry Composer.");
-		};
+var composer = function(insert, limit, normal, resize, math, align, save) {
+	// Provate Data //
+	var insert= "insert icons",
+		limit = 10,
+		normal = 80,
+		resize = 2,
+		math = (normal / resize),
+		align = "align the new icons at the bottom",
+		save = "Save and export";
+	var haveInstalled = function(installed) {
+	if (installed !== false) {
+		console.log("Start a new project in the BlackBerry Composer.");
+	} else {
+		console.log("Download and install the latest versino of the BlackBerry Composer.");
 	};
-	var insert = function() { return insert };
-	var resize = function() { return (fullSize / resize) };
-	var fullSize = function() { return fullSize };
+	};
+	var insertIcons = function() { return insert };
+	var iconLimit = function() { return limit };
+	var normalIcons = function() { return normal };
+	var resizeIcons = function() { return resize };
+	var divide = function() { return math};
+	var alignIcons = function() { return align };
+	var exportFile = function() { return save };
 	return {
 		// Public Data //
-		"action": getAction,
-		"insert": insert,
-		"resize": resize,
-		"fullSize": fullSize,
+		"installed": haveInstalled,
+		"insert": insertIcons,
+		"limit": iconLimit,
+		"normal": normalIcons,
+		"resize": resizeIcons,
+		"math": divide,
+		"align": alignIcons,
+		"save": exportFile,
 	};
 };
-var action = composer(true);
-var insert = composer("default icons");
-var fullSize = composer(80);
+var haveInstalled = composer(true);
+var insert = composer("insert icons");
+var limit = composer(10);
+var normal = composer(80);
 var resize = composer(2);
-console.log("Import your " + insert.insert() + " into the BlackBerry Composer. Now resize your icons from " + fullSize.fullSize() + "px by " + fullSize.fullSize() + " px to " + resize.resize() + "px by " + resize.resize() + "px.");
+var math = composer(normal / resize);
+var align = composer("align the new icons at the bottom");
+var save = composer("save and export");
+console.log("First, " + insert.insert() + ".");
+console.log("All " +  limit.limit() + " icons need to placed in all at once.");
+console.log("Next, change the resolution from " + normal.normal() + "px by " + normal.normal() + "px to " + math.math() + "px by " + math.math() + "px.");
+console.log("Now " + align.align() + " of the preview canvas. Make sure the first icon is at the bottom left and the last icon is at the bottom right before you " + align.align() + ". Now pace them evenly.");
+console.log(save.save() + " you SVG file.");
 
 // Use of JSON Data //
 var outputData = function(json) {
